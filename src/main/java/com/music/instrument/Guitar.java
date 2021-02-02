@@ -1,8 +1,11 @@
 package com.music.instrument;
 
-public final class Guitar extends StringedInstrument {
-    private String guitarType;
+import org.apache.log4j.Logger;
 
+public final class Guitar extends StringedInstrument {
+    private static final Logger LOGGER = Logger.getLogger(Guitar.class);
+
+    private String guitarType;
     public Guitar() {
 
     }
@@ -25,18 +28,18 @@ public final class Guitar extends StringedInstrument {
     }
 
     public void printGuitarType() {
-        System.out.println("Guitar type: " + guitarType);
+        LOGGER.info("Guitar type: " + guitarType);
     }
 
     @Override
     public void play() {
-        System.out.println("Guitar plays");
+        LOGGER.info("Guitar plays");
     }
 
     @Override
     public void printFields() {
         super.printFields();
-        System.out.println("Guitar type: " + guitarType);
+        LOGGER.info("Guitar type: " + guitarType);
     }
 
     @Override

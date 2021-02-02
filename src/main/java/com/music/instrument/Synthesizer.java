@@ -1,8 +1,10 @@
 package com.music.instrument;
 
-public final class Synthesizer extends KeyboardInstrument {
-    private boolean electronic;
+import org.apache.log4j.Logger;
 
+public final class Synthesizer extends KeyboardInstrument {
+    private static final Logger LOGGER = Logger.getLogger(Synthesizer.class);
+    private boolean electronic;
     public Synthesizer() {
     }
 
@@ -26,13 +28,13 @@ public final class Synthesizer extends KeyboardInstrument {
 
      @Override
     public void play() {
-        System.out.println("Synthesizer plays");
+         LOGGER.info("Synthesizer plays");
     }
 
     @Override
     public void printFields() {
         super.printFields();
-        System.out.println("Electronic: " + electronic);
+        LOGGER.info("Electronic: " + electronic);
     }
 
     @Override

@@ -1,9 +1,13 @@
 package com.music.instrument;
 
+import org.apache.log4j.Logger;
+
 public abstract class WindInstrument implements Instrument{
+    private static final Logger LOGGER = Logger.getLogger(WindInstrument.class);
+
     private String manufacturer;
     private int price;
-    public final String TYPE = "WIND_INSTRUMENT_TYPE";
+    public final String TYPE = "wind_instrument";
 
     public WindInstrument() {
 
@@ -31,18 +35,18 @@ public abstract class WindInstrument implements Instrument{
     }
 
     public final void printManufacturer(){
-        System.out.println("===Manufacturer===");
-        System.out.println("        " + manufacturer);
+        LOGGER.info("===Manufacturer===");
+        LOGGER.info("        " + manufacturer);
     }
 
     @Override
     public void play() {
-        System.out.println("Wind Instrument plays");
+        LOGGER.info("Wind Instrument plays");
     }
 
     @Override
     public void printFields() {
-        System.out.println("Manufacturer: " + manufacturer);
-        System.out.println("Price: " + price);
+        LOGGER.info("Manufacturer: " + manufacturer);
+        LOGGER.info("Price: " + price);
     }
 }

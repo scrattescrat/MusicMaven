@@ -1,9 +1,13 @@
 package com.music.instrument;
 
+
+import org.apache.log4j.Logger;
+
 public abstract class StringedInstrument implements Instrument{
+    private static final Logger LOGGER = Logger.getLogger(StringedInstrument.class);
     private String manufacturer;
     private int price;
-    public final String TYPE = "STRINGED_INSTRUMENT_TYPE";
+    public final String TYPE = "stringed_instrument";
 
     public StringedInstrument() {
 
@@ -31,18 +35,18 @@ public abstract class StringedInstrument implements Instrument{
     }
 
     public final void printManufacturer(){
-        System.out.println("===Manufacturer===");
-        System.out.println("        " + manufacturer);
+        LOGGER.info("===Manufacturer===");
+        LOGGER.info("        " + manufacturer);
     }
 
     @Override
     public void play() {
-        System.out.println("Stringed Instrument plays");
+        LOGGER.info("Stringed Instrument plays");
     }
 
     @Override
     public void printFields() {
-        System.out.println("Manufactuter: " + manufacturer);
-        System.out.println("Price: " + price);
+        LOGGER.info("Manufactuter: " + manufacturer);
+        LOGGER.info("Price: " + price);
     }
 }

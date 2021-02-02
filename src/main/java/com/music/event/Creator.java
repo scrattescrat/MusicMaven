@@ -26,8 +26,6 @@ public class Creator {
                 instrument = new Flute("Roosen", 2145);
                 break;
             default:
-//                System.out.println("Wrong number");
-//                instrument = null;
                 throw new MyException("Exception: Wrong number");
         }
         return instrument;

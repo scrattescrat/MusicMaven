@@ -1,6 +1,9 @@
 package com.music.instrument;
 
+import org.apache.log4j.Logger;
+
 public final class Violin extends StringedInstrument {
+    private static final Logger LOGGER = Logger.getLogger(Violin.class);
 
     public Violin() {
 
@@ -12,7 +15,7 @@ public final class Violin extends StringedInstrument {
 
     @Override
     public void play() {
-        System.out.println("Violin plays");
+        LOGGER.info("Violin plays");
     }
 
     @Override

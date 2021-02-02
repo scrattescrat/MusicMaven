@@ -1,9 +1,12 @@
 package com.music.instrument;
 
+import org.apache.log4j.Logger;
+
 public abstract class KeyboardInstrument implements Instrument{
+    private static final Logger LOGGER = Logger.getLogger(KeyboardInstrument.class);
     private String manufacturer;
     private int price;
-    public final String TYPE = "KEYBOARD_INSTRUMENT_TYPE";
+    public final String TYPE = "keyboard_instrument";
 
     public KeyboardInstrument() {
     }
@@ -30,19 +33,19 @@ public abstract class KeyboardInstrument implements Instrument{
     }
 
     public final void printManufacturer(){
-        System.out.println("===Manufacturer===");
-        System.out.println("        " + manufacturer);
+        LOGGER.info("===Manufacturer===");
+        LOGGER.info("        " + manufacturer);
     }
 
     @Override
     public void play() {
-        System.out.println("Keyboard Instrument plays");
+        LOGGER.info("Keyboard Instrument plays");
     }
 
     @Override
     public void printFields() {
-        System.out.println("Manufacturer: " + manufacturer);
-        System.out.println("Price: " + price);
+        LOGGER.info("Manufacturer: " + manufacturer);
+        LOGGER.info("Price: " + price);
     }
 
 

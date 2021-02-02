@@ -1,10 +1,15 @@
 package com.music.event;
 
 import com.music.instrument.*;
+import com.music.utils.JsonExec;
+import org.apache.log4j.Logger;
 
 import java.util.*;
 
-public class Orhester {
+public class Orchestra {
+
+    private static final Logger LOGGER = Logger.getLogger(Orchestra.class);
+
 
     List<WindInstrument> jazzMelody;
     List<KeyboardInstrument> band;
@@ -12,13 +17,13 @@ public class Orhester {
 
     public int size = 12;
 
-    public Orhester(){
+    public Orchestra(){
         jazzMelody = new ArrayList<WindInstrument>();
         band = new LinkedList<KeyboardInstrument>();
         uniqueStorage = new HashSet<Instrument>();
     }
 
-    public Orhester(KeyboardInstrument keyboardInstrument, Instrument instrument){
+    public Orchestra(KeyboardInstrument keyboardInstrument, Instrument instrument){
         jazzMelody = new ArrayList<WindInstrument>();
         band = new LinkedList<KeyboardInstrument>();
         size ++;
@@ -33,15 +38,17 @@ public class Orhester {
     }
 
     public void addWindInstrument(WindInstrument instrument) {
+        LOGGER.info("Add Instrument");
         jazzMelody.add(instrument);
     }
 
     public void addKeyboardInstrument(KeyboardInstrument keyboardInstrument) {
+//        LOGGER.info("Add Keyboard Instrument");
         band.add(keyboardInstrument);
     }
 
     public void addUniqueInstrument(Instrument instrument) {
-        System.out.println("addUniqueInstrument");
+        LOGGER.info("addUniqueInstrument");
         uniqueStorage.add(instrument);
     }
 
@@ -60,29 +67,16 @@ public class Orhester {
 
 
     public void printInfo() {
-//        System.out.println("=====Instrument=====");
-//
-//        for (WindInstrument jazzInstrument : jazzMelody) {
-//            System.out.println(jazzInstrument.toString());
-//        }
 
-        System.out.println("=====BAND=====");
+
+        LOGGER.info("=======THE BAND=======");
 
         for (Object keyboardInstrument : band) {
-            System.out.println(keyboardInstrument.toString());
+            LOGGER.info(keyboardInstrument.toString());
         }
 
-//        System.out.println("=====Unique Instrument=====");
-//
-//        for (Instrument instrument : uniqueStorage) {
-//
-//            try {
-//                System.out.println(instrument.toString());
-//            } catch (NullPointerException e) {
-//                e.printStackTrace();
-//            }
-//        }
     }
+
 
 }
 

@@ -1,6 +1,9 @@
 package com.music.instrument;
 
+import org.apache.log4j.Logger;
+
 public final class Saxophone extends WindInstrument {
+    private static final Logger LOGGER = Logger.getLogger(Saxophone.class);
 
     public Saxophone() {
 
@@ -12,7 +15,7 @@ public final class Saxophone extends WindInstrument {
 
     @Override
     public void play() {
-        System.out.println("Saxophone plays");
+        LOGGER.info("Saxophone plays");
     }
 
     @Override

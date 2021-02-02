@@ -1,8 +1,11 @@
 package com.music.instrument;
 
-public final class Piano extends KeyboardInstrument {
-    private String colour;
+import org.apache.log4j.Logger;
 
+public final class Piano extends KeyboardInstrument {
+    private static final Logger LOGGER = Logger.getLogger(KeyboardInstrument.class);
+
+    private String colour;
     public Piano() {
     }
 
@@ -25,13 +28,13 @@ public final class Piano extends KeyboardInstrument {
 
     @Override
     public void play() {
-        System.out.println("Piano plays");
+        LOGGER.info("Piano plays");
     }
 
     @Override
     public void printFields() {
         super.printFields();
-        System.out.println("Colour: " + colour);
+        LOGGER.info("Colour: " + colour);
     }
 
     @Override
